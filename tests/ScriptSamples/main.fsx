@@ -12,3 +12,10 @@ open Mavnn.Blog.TypeProvider.Provided
 // But we can use the generated type from within the assembly!!!
 // This way we can build the type provider without any problems
 printfn "MyType.MyProperty: %s" MyType.MyProperty
+
+
+let thing = MyType()
+printfn "thing.InnerState = %s" thing.InnerState
+
+let thing2 = MyType("Some other text")
+printfn "thing2.InnerState = %s" thing2.InnerState
