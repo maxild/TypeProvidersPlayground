@@ -73,6 +73,7 @@ type MavnnProvider (config : TypeProviderConfig) as this =
 
     let createTypes' () =
         let myType = ProvidedTypeDefinition(asm, ns, "MyType", Some typeof<obj>)
+
         let myProp = ProvidedProperty("MyProperty", typeof<string>, isStatic = true,
                                         getterCode = fun _ -> <@@ "Hello world" @@>)
         myType.AddMember(myProp)
