@@ -1,48 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <!-- When compiling .NET SDK 2.0 projects targeting .NET 4.x on Mono using 'dotnet build' you -->
-  <!-- have to teach MSBuild where the Mono copy of the reference asssemblies is -->
-  <Import Project="..\..\netfx.props" />
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.1</Version>
-    <!-- Use an explicit nuspec to allow us to specify "references", the metadata properties at https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties don't allow this -->
-    <NuspecFile>LemonadeProvider.nuspec</NuspecFile>
-    <!-- <Optimize>true</Optimize>
-    <Tailcalls>true</Tailcalls>
-    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference> -->
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\..\paket-files\fsprojects\FSharp.TypeProviders.SDK\src\ProvidedTypes.fsi">
+    <Compile Include="../../paket-files/fsprojects/FSharp.TypeProviders.SDK/src/ProvidedTypes.fsi">
       <Paket>True</Paket>
       <Link>paket-files/ProvidedTypes.fsi</Link>
     </Compile>
-    <Compile Include="..\..\paket-files\fsprojects\FSharp.TypeProviders.SDK\src\ProvidedTypes.fs">
+    <Compile Include="../../paket-files/fsprojects/FSharp.TypeProviders.SDK/src/ProvidedTypes.fs">
       <Paket>True</Paket>
       <Link>paket-files/ProvidedTypes.fs</Link>
     </Compile>
+    <Compile Include="ProvidedTypesHelpers.fs" />
+    <Compile Include="Operators.fs" />
     <Compile Include="SimpleProvider.fs" />
-    <!-- <Compile Include="TypeProvider.fs" /> -->
     <Compile Include="ID3.fs" />
     <Compile Include="ID3Provider.fs" />
-
-    <!-- These files are the facades necessary to run .NET Standard 2.0 components on .NET Framework 4.6.1 (.NET Framework 4.7 will -->
-    <!-- come with these facades included). Because the type provider is a .NET Standard 2.0 component, the deployment of the type -->
-    <!-- provider must include these facade DLLs if it is to run hosted inside an F# compiler executing using  .NET Framework 4.6.1 or Mono 5.0. -->
-
-    <!-- NOTE: FSI distributed with vs2019 does run on net472, therefore we do not need the facades mentioned above -->
-    <!-- <None Include="..\..\packages\NETStandard.Library.NETFramework\build\net461\lib\netstandard.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\..\packages\NETStandard.Library.NETFramework\build\net461\lib\System.Reflection.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\..\packages\NETStandard.Library.NETFramework\build\net461\lib\System.Runtime.dll">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None> -->
   </ItemGroup>
+  <Import Project="..\..\netfx.props" />
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

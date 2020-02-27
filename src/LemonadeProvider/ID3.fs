@@ -1,15 +1,10 @@
-﻿namespace DidacticCode.ID3
+﻿namespace LemonadeProvider
 
 open System
 open System.Collections.Generic
 open System.IO
 open System.Text
 open Microsoft.FSharp.Core.LanguagePrimitives
-
-[<AutoOpen>]
-module CoreExtensions =
-  let inline tee fn x = x |> fn |> ignore; x
-  let inline (|>!) x fn = tee fn x
 
 [<AutoOpen>]
 module BinaryReaderExtensions =

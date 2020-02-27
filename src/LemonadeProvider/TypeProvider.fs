@@ -1,4 +1,4 @@
-﻿module Mavnn.Blog.TypeProvider
+﻿module LemonadeProvider
 
 // See also http://blog.mavnn.co.uk/type-providers-from-the-ground-up/
 

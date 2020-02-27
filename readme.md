@@ -85,3 +85,23 @@ When we use `...` we mean a recursive upwards directory search looking for a dir
 When we use `fsharpNN` we mean a successive search backwards for fsharp42, fsharp41 etc. Putting a TPDTC in fsharp41 means the TPDTC is suitable to load into F# 4.1 tooling and later, and has the right to minimally assume FSharp.Core 4.4.1.0.
 
 NOTE: Today FSharp.Core and F# versions are aligned at 4.7.
+
+## Code Quotations
+
+This feature is similar to `Expression<T>` trees in C#3 (LINQ).
+
+This feature is used heavily when defining provided methods, properties, constructors etc.
+
+Docs can be found [here](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/code-quotations)
+
+The (FSharp.Quotations.Evaluator)[https://github.com/fsprojects/FSharp.Quotations.Evaluator] project can be used to evaluate F# quotations. It provides support for evaluating and executing F# expression objects.
+
+Splicing enables you to combine literal code quotations with expressions that you have created programmatically or from another code quotation. The `%` and `%%` operators enable you to add an F# expression object into a code quotation.  You use the `%` operator to insert a typed expression object into a typed quotation; you use the `%%` operator to insert an untyped expression object into an untyped quotation.
+
+Splicing is "string interpolation" for F# quotation objects (a.k.a expressions)
+
+Travesal of F# expression expressions are done using pattern matching. The following modules (defined in ???) contains active patterns
+
+* `Microsoft.FSharp.Quotations`: ExprShape
+* `Microsoft.FSharp.Quotations.Patterns`: Patterns
+* `Microsoft.FSharp.Quotations.DerivedPatterns`: DerivedPatterns
