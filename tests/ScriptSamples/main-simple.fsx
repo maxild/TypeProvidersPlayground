@@ -1,9 +1,9 @@
-#r "../../src/LemonadeProvider/bin/Debug/netstandard2.0/LemonadeProvider.dll"
+#r "../../src/TypeProviders/bin/Debug/netstandard2.0/TypeProviders.dll"
 
 // TODO: Problem that we have to close the instance of vscode (or visual studio)
 //       where FSI instance is running.
 
-open LemonadeProvider
+open TypeProviders
 
 // TODO: The generated type does not work in the repl
 // In the REPL type:

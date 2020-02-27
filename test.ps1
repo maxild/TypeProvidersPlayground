@@ -1,1 +1,1 @@
-dotnet test .\tests\LemonadeProvider.Tests\LemonadeProvider.Tests.fsproj
+dotnet test .\tests\TypeProviders.Tests\TypeProviders.Tests.fsproj

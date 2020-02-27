@@ -1,9 +1,9 @@
 ﻿
 #r "System.Windows.Forms"
 #r "System.Drawing"
-#r "../../src/LemonadeProvider/bin/Debug/netstandard2.0/LemonadeProvider.dll"
+#r "../../src/TypeProviders/bin/Debug/netstandard2.0/TypeProviders.dll"
 
-open LemonadeProvider
+open TypeProviders
 open System.Drawing
 open System.Windows.Forms
 

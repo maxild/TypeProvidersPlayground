@@ -1,4 +1,4 @@
-namespace LemonadeProvider
+namespace TypeProviders
 
 open System
 open System.Collections.Generic

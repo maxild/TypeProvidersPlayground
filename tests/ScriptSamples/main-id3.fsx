@@ -1,6 +1,6 @@
-#r "../../src/LemonadeProvider/bin/Debug/netstandard2.0/LemonadeProvider.dll"
+#r "../../src/TypeProviders/bin/Debug/netstandard2.0/TypeProviders.dll"
 
-open LemonadeProvider
+open TypeProviders
 
 [<Literal>]
 let Path = __SOURCE_DIRECTORY__ + @"/../../data/Episode_56_-_You_Must_Take_Care_Of_Yourself_-_Dave_Fancher.mp3"

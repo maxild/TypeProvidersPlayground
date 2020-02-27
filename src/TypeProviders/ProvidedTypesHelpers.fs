@@ -1,4 +1,4 @@
-namespace LemonadeProvider
+namespace TypeProviders
 
 open ProviderImplementation.ProvidedTypes
 open Microsoft.FSharp.Quotations

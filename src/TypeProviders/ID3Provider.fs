@@ -1,4 +1,4 @@
-namespace LemonadeProvider
+namespace TypeProviders
 
 #nowarn "0025" // Incomplete pattern match, because of ([| :? string as fileName |]: obj array) annotation
 
@@ -10,7 +10,7 @@ open ProviderImplementation.ProvidedTypes
 module internal Helper =
     // Get the assembly and namespace used to house the provided types
     let thisAssembly = System.Reflection.Assembly.GetExecutingAssembly()
-    let rootNamespace = "LemonadeProvider"
+    let rootNamespace = "TypeProviders"
 
 // alias
 type FrameDictionary = Dictionary<string, ID3Frame>

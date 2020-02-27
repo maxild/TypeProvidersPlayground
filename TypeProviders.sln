@@ -1,15 +1,15 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AADF5FD8-4851-41CB-88B7-2F98472249F4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LemonadeProvider", "src\LemonadeProvider\LemonadeProvider.fsproj", "{72FE26BD-FD70-4551-BFF2-D34291172BFD}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TypeProviders", "src\TypeProviders\TypeProviders.fsproj", "{72FE26BD-FD70-4551-BFF2-D34291172BFD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{37816C77-8944-478D-84A6-4CA720710767}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LemonadeProvider.Tests", "tests\LemonadeProvider.Tests\LemonadeProvider.Tests.fsproj", "{948A9435-690D-4E6E-B825-BF2B9E87E9BA}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TypeProviders.Tests", "tests\TypeProviders.Tests\TypeProviders.Tests.fsproj", "{948A9435-690D-4E6E-B825-BF2B9E87E9BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,1 +1,1 @@
-dotnet build .\src\LemonadeProvider\LemonadeProvider.fsproj
+dotnet build .\src\TypeProviders\TypeProviders.fsproj

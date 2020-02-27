@@ -1,4 +1,4 @@
-﻿module LemonadeProvider
+﻿namespace TypeProviders
 
 // See also http://blog.mavnn.co.uk/type-providers-from-the-ground-up/
 

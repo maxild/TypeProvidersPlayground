@@ -2,9 +2,9 @@
 // #r @"../test/ComboProvider.dll"
 // #endif
 
-module LemonadeProvider.Tests
+module TypeProviders.Tests
 
-open LemonadeProvider
+open TypeProviders
 open Xunit
 
 [<Fact>]

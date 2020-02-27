@@ -1,4 +1,4 @@
-namespace LemonadeProvider
+namespace TypeProviders
 
 [<AutoOpen>]
 module CoreExtensions =

@@ -1,4 +1,4 @@
-namespace LemonadeProvider
+namespace TypeProviders
 
 open ProviderImplementation.ProvidedTypes
 open FSharp.Quotations
@@ -16,7 +16,7 @@ type SomeRuntimeHelper2() =
 type SimpleErasingProvider (config : TypeProviderConfig) as this =
     inherit TypeProviderForNamespaces (config, addDefaultProbingLocation=true)
 
-    let ns = "LemonadeProvider"
+    let ns = "TypeProviders"
     let asm = Assembly.GetExecutingAssembly()
 
     // check we contain a copy of runtime files, and are not referencing the runtime DLL
@@ -79,7 +79,7 @@ type SimpleErasingProvider (config : TypeProviderConfig) as this =
 type SimpleGenerativeProvider (config : TypeProviderConfig) as this =
     inherit TypeProviderForNamespaces (config)
 
-    let ns = "LemonadeProvider"
+    let ns = "TypeProviders"
     let asm = Assembly.GetExecutingAssembly()
 
     // check we contain a copy of runtime files, and are not referencing the runtime DLL

@@ -27,7 +27,45 @@ help here, because it allow you to reference files on Github.
 * Target the TPRTC to netstandard2.0
 * Target the TPDTC to netstandard2.0
 * The following compile-time constants exist
-    * IS_DESIGNTIME
+    * IS_DESIGNTIME, NO_GENERATIVE. They can be defined in the `MyProvider.DesignTime.fsproj`
+
+```xml
+     <DefineConstants>NO_GENERATIVE</DefineConstants>
+     <DefineConstants>IS_DESIGNTIME</DefineConstants>
+```
+
+* `FSharp.Core` reference: When building with the .NET SDK we have to use `DisableImplicitFSharpCoreReference` to disable the implicit FSharp.Core reference. Previously this was disabled automatically, if you had an FSharp.Core reference in your project file.
+
+```xml
+<DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
+```
+* Don Syme: Eventually we should just use `FSharp.Core 4.3.4` everywhere, though it depends if you still want the TP usable in VS2015 (which I suppose we do). TPDTCs have to load into tooling which use whatever version of FSharp.Core they use. so a TPDTC should depend on an early FSharp.Core that is lower than anyof the FSHarp.Core used by tooling it will load into. See also [this](https://fsharp.github.io/2015/04/18/fsharp-core-notes.html)
+
+* Always reference FSharp.Core via the NuGet package.
+* Make your FSharp.Core references explicit
+* Libraries should target lower versions of FSharp.Core
+
+```xml
+<PackageReference Include="FSharp.Core" Version="4.2.3" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
+```
+
+FSharp.Core is binary compatible across versions of the F# language.
+
+* TODO: make this table up to date, and read the guidelines about FSharp.Core...
+
+| FSharp.Core        | F#           |
+| ------------- | ------------- |
+| 4.0.0.0      | F# 2.0 |
+| 4.3.0.0      | F# 3.0      |
+| 4.3.1.0  | F# 3.1      |
+| 4.4.0.0  | F# 4.0      |
+| 4.4.1.0  | F# 4.1      |
+| 4.4.3.0  | F# 4.1+      |
+
+Likewise, FSharp.Core is binary compatible from “portable” and “netstandard” profiles to actual runtime implementations. For example, FSharp.Core for netstandard1.6 is binary compatible with the runtime implementation assembly 4.4.3.0 for .NET Core and .NET Framework apps.
+
+* Do not include a copy of FSharp.Core with your library or package. The decision about which FSharp.Core a library binds to is up to the application hosting of the library. Especially, do _not_ include FSharp.Core in the lib folder of a NuGet package.
+
 * The typical nuget package layout for a provider that has combined design-time and runtime components is:
 
 ```
