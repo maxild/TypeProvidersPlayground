@@ -20,8 +20,8 @@ module internal ProvidedTypesHelpers =
     let inline mkProvidedConstructor (parameters: ProvidedParameter list) (invokeCode: Expr list -> Expr) : ProvidedConstructor =
         ProvidedConstructor(parameters, invokeCode)
 
-    // let inline mkReadOnlyProvidedProperty<^T> getterCode propName =
-    //     ProvidedProperty(propName, typeof<^T>, GetterCode = getterCode)
+    let inline mkReadOnlyProvidedProperty< ^T> (getterCode: Expr list -> Expr) (propName: string) : ProvidedProperty =
+         ProvidedProperty(propName, typeof< ^T>, getterCode = getterCode)
 
     // NOTE: methodName is last because we want to pipe it in
     let inline mkProvidedMethod< ^T> (parameters: ProvidedParameter list) (invokeCode: Expr list -> Expr) (methodName: string) : ProvidedMethod =

@@ -10,19 +10,13 @@ type AudioSample = ID3Provider<Path>
 let sample = AudioSample()
 
 // title
-sample.GetFrame "TIT2" |> printfn "%A"
-// val it : Option<ID3Frame> =
-//   Some (TIT2 "56: You Must Take Care of Yourself with Dave Fancher")
+sample.Copyright |> printfn "Copyright = %s"
+sample.Performer |> printfn "Performer = %s"
+sample.TrackTitle |> printfn "TrackTitle = %s"
+sample.AlbumTitle |> printfn "AlbumTitle = %s"
+sample.Year |> printfn "Year = %s"
+sample.ContentType |> printfn "ContentType = %s"
+sample.Composer |> printfn "Composer = %s"
 
-// image
-sample.GetFrame("APIC") |> printfn "%A"
-// val it : Option<ID3Frame> =
-//   Some
-//     (APIC
-//        { TextEncoding = 0uy
-//          MimeType = "image/jpeg"
-//          PictureType = 0uy
-//          Description = ""
-//          Image = ...
-
+printfn "Press enter to exit..."
 System.Console.ReadLine() |> ignore

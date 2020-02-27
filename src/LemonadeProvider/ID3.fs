@@ -1,4 +1,4 @@
-﻿namespace LemonadeProvider
+namespace LemonadeProvider
 
 open System
 open System.Collections.Generic
@@ -134,7 +134,9 @@ module ID3Reader =
       | "TLEN" -> Some (id, content.[1..] |> readTLENFrame)
       | "PRIV"
       | "\u0000\u0000\u0000\u0000" -> None
-      | x -> printfn "Unsupported Tag: %s" x; None
+      //| x -> printfn "Unsupported Tag: %s" x; None
+      | _ -> None
+
 
   let private readID3Header (reader: BinaryReader) =
     let id = reader.ReadBytes 3 |> Encoding.ASCII.GetString
